@@ -1,12 +1,22 @@
-const express = require('express');
-const path = require('path');
-const app = express();
-const PORT = process.env.PORT || 3000;
+/* eslint-disable @typescript-eslint/no-var-requires */
+const express = require('express')
+const path = require('path')
 
-app.use(express.static(__dirname + '/dist'));
-app.use('*', function (req, res) {
-    res.sendFile(path.join(__dirname + '/dist/index.html'));
-});
-app.listen(PORT, function () {
-    console.log(`App listening on port ${PORT}!`);
-});
+const PORT = 3000
+
+const app = express()
+
+app.use(express.static(path.join(__dirname, '../dist')))
+
+app.use((req, res) => {
+	res.status(404).sendFile(path.join(__dirname, '../dist/404.html'))
+})
+
+app.use((req, res) => {
+	res.status(500).sendFile(path.join(__dirname, '../dist/500.html'))
+})
+
+app.listen(PORT, () => {
+	// eslint-disable-next-line no-console
+	console.log(`listening on port: ${PORT}!`)
+})
