@@ -1,0 +1,124 @@
+@import "./styles/mixin_avatar";
+@import "./styles/variables";
+
+@import "./components/avatar/avatar";
+@import "./components/dialog-card/dialof-card";
+@import "./components/history-messages/history-messages";
+@import "./components/input-form/input-form";
+@import "./components/profile/profile";
+@import "./components/input/input";
+@import "./components/button/button";
+@import "./components/link/link";
+@import "./components/text-link/text-link";
+@import "./components/title-auth/title-auth";
+@import "./components/appBar/app-bar";
+@import "./components/iconLink/iconLink";
+@import "./components/appChat/appChat";
+@import "./components/formInputIcon/formInputIcon";
+
+@import "./pages/home/home";
+@import "./pages/profile/profile";
+@import "./pages/signIn/signIn";
+@import "./pages/500-page/index";
+@import "./pages/404-page/index";
+
+
+.sidebar {
+	min-height: 100vh;
+	background-color: #f0f3f6;
+
+	&__content {
+		position: absolute;
+		overflow-y: scroll;
+		height: 100%;
+		width: 350px;
+		padding: 20px;
+		box-sizing: border-box;
+
+		&::-webkit-scrollbar {
+			width: 8px;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background-color: #a8b2b9;
+		}
+	}
+}
+
+.content {
+	height: 100%;
+	background-color: #EDEEF0;
+	display: flex;
+	flex-direction: column;
+
+	.msg {
+		flex: 1 1 auto;
+	}
+}
+
+.status-message {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	margin: 0 auto;
+}
+
+.is-sent {
+	background-color: $msg-sent-color;
+}
+
+.is-received {
+	background-color: $msg-received-color;
+}
+
+.is-read {
+	background-color: $msg-read-color;
+}
+
+.error {
+	font-family: $font-family-text;
+	font-weight: bold;
+	color: $alarm-color;
+	font-size: inherit;
+}
+
+
+.error-page {
+	margin: 0 auto;
+	text-align: center;
+	font-family: $font-family-h;
+	background-color: #EDEEF0;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	&__title {
+		font-size: 9rem;
+	}
+
+	&__content {
+		font-size: 2.5rem;
+		margin: 20px 50px;
+	}
+}
+
+.start {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	a {
+		font-size: 2rem;
+	}
+}
+
+#label {
+	align-self: center;
+}
+
+ul {
+	list-style-type: none;
+}
